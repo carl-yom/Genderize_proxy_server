@@ -14,9 +14,14 @@ Built with FastAPI. It acts as a proxy and data transformation layer for the pub
 * **Validation:** Pydantic
 
 ## 🧠 Architectural Decisions
-This service avoids the "fat route" anti-pattern by utilizing a modular architecture separated by concern:
+ modular architecture separated by concern:
 * `main.py`: The orchestrator. Handles routing, CORS configuration, and global exception handling to guarantee strict JSON error formatting.
 * `schemas.py`: Pydantic models that enforce the exact input and output data contracts.
 * `clients.py`: The isolated network layer. Handles outbound asynchronous requests and protects the server with strict timeout policies.
 * `services.py`: The core business logic. Evaluates data edge cases, calculates the `is_confident` metric, and generates the dynamic UTC `processed_at` timestamps.
 
+## 💻 Local Setup & Installation
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/carl-yom/Genderize_proxy_server.git](https://github.com/carl-yom/Genderize_proxy_server.git)
